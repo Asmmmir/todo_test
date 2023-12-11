@@ -1,4 +1,4 @@
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import './Todo.scss';
 import { useAppDispatch, useAppSelector } from '../../store';
 import { changeFilter, edit, remove } from '../../store/todoSlice/todoSlice';
@@ -16,16 +16,19 @@ interface TodoProps {
 
 const Todo: React.FC<TodoProps> = ({ todo }) => {
   const dispatch = useAppDispatch();
+  const [description, setDescription] = useState<string>(todo.description)
 
   const handleFilterChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newStatus = event.target.value as TodoStatus;
     dispatch(changeFilter({ id: todo.id, status: newStatus}));
+  
   };
 
 
   const handleDescription = (event: ChangeEvent<HTMLTextAreaElement>) => {
     const newDescription = event.target.value;
     dispatch(edit({ id: todo.id, description: newDescription }));
+    setDescription(event.target.value)
   };
 
   return (
@@ -37,7 +40,7 @@ const Todo: React.FC<TodoProps> = ({ todo }) => {
         </select>
       <div className='todo__task'>
         <p>{todo.title}</p>
-        <textarea value={todo.description} className='todo__description' placeholder='Description' onChange={handleDescription} />
+        <textarea value={description} className='todo__description' placeholder='Description' onChange={handleDescription} />
       </div>
       <FaTrash size='1.5rem' color='#e55446' onClick={() => dispatch(remove(todo.id))} />
     </div>
