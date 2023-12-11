@@ -1,0 +1,22 @@
+.main { 
+    height: 100%;
+    padding: 2rem;
+    margin-top: 1rem;
+    background-color: #fff;
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+
+        &-fetch {
+            padding: 1rem;
+            background-color: #8f4fe7;
+            color: white;
+            border-radius: 1rem;
+            border: none;
+            font-family: 'Poppins';
+        }
+    }
+}

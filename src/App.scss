@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;800&family=Roboto:wght@400;500&display=swap');
+
+body {
+    background: linear-gradient(to bottom, #68EACC 0%, #497BE8 100%);
+    margin: 0 auto;
+    min-height: 100vh;
+    font-family: 'Poppins';
+
+    display: flex;
+    justify-content: center;
+}
+
+
+.app {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}

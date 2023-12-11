@@ -1,0 +1,23 @@
+.todolist {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem 0;
+    padding: 2rem;
+    background-color: #fff;
+    h1 {
+        color: white;
+    }
+
+    .input {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        input {
+            width: 15rem;
+            height: 2rem;
+        }
+    }
+}
